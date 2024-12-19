@@ -32,7 +32,7 @@ class StringCalculator
     num_arr.each_char.with_index do |char, index|
       next unless char == '-'
 
-      parsed_number = parse_negative_number(index + 1, num_arr)
+      parsed_number, index = parse_negative_number(index + 1, num_arr)
       negative_arr << parsed_number * -1 unless parsed_number.zero?
     end
     raise "negative numbers not allowed #{negative_arr}" unless negative_arr.empty?
@@ -52,6 +52,6 @@ class StringCalculator
       current_number = current_number * 10 + num_arr[index].to_i
       index += 1
     end
-    current_number
+    [current_number, index]
   end
 end

@@ -44,7 +44,7 @@ RSpec.describe StringCalculator do
     end
 
     it 'raise error for multiple digit' do
-        expect { calculator.add_number('-1,-2,-3') }.to raise_error('negative numbers not allowed [-1, -2, -3]')
+        expect { calculator.add_number('-1,-24,-3') }.to raise_error('negative numbers not allowed [-1, -24, -3]')
     end
 
     it 'raise error for digits with delimeters' do
